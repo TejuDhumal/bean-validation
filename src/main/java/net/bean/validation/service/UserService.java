@@ -1,0 +1,21 @@
+package net.bean.validation.service;
+
+
+import net.bean.validation.model.User;
+import net.bean.validation.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class UserService {
+
+    @Autowired
+    private UserRepository userRepository;
+
+    public User createUser(User user){
+        return userRepository.save(user);
+    }
+
+
+}
+
